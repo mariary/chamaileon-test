@@ -36,7 +36,7 @@
         <v-row justify="center">
           <a
             v-for="(next, i) in whatsNext"
-            :key="i"
+            :key="i*Math.random()"
             :href="next.href"
             class="subheading mx-3"
             target="_blank"
@@ -57,7 +57,7 @@
         <v-row justify="center">
           <a
             v-for="(link, i) in importantLinks"
-            :key="i"
+            :key="i*Math.random()"
             :href="link.href"
             class="subheading mx-3"
             target="_blank"
@@ -78,7 +78,7 @@
         <v-row justify="center">
           <a
             v-for="(eco, i) in ecosystem"
-            :key="i"
+            :key="i*Math.random()"
             :href="eco.href"
             class="subheading mx-3"
             target="_blank"

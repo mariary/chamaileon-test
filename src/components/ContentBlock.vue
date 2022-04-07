@@ -2,8 +2,8 @@
   <v-row class="wrapper">
    <ItemBeer
         :item="item"
-        v-for="(item) in filterResult"
-        :key="item.id"
+        v-for="(item) in filtersResult"
+        :key="item.id*Math.random()"
    />
   </v-row>
 </template>
@@ -16,8 +16,7 @@ export default {
     components: {ItemBeer},
     props: {
       list: Array,
-      searchResult: Array,
-      filterResult: Array
+      filtersResult: Array,
     },
 
     data: () => ({

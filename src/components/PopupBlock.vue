@@ -10,13 +10,13 @@
           contain
       ></v-img>
       {{item.description}}
-      <div v-for="(type,i) of Object.keys(item.ingredients)" :key="i">
+      <div v-for="(type,i) of Object.keys(item.ingredients)" :key="i*Math.random()">
         <span class="font-weight-bold">{{type}}: </span>
         <span v-if="typeof item.ingredients[type] === 'string'">
           {{item.ingredients[type]}}
         </span>
         <span v-else>
-          <span v-for="(meal,i) in item.ingredients[type]" :key="i">
+          <span v-for="(meal,i) in item.ingredients[type]" :key="i*Math.random()">
             <span>{{meal.name}}</span>
             <span v-if="i !== item.ingredients[type].length - 1">, </span>
           </span>
@@ -40,10 +40,6 @@ export default {
     }),
 
     mounted() {
-      for (let kek of Object.keys(this.item.ingredients)) {
-
-        console.log(kek, this.item.ingredients[kek].length);
-      }
     }
 }
 </script>

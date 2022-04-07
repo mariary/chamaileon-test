@@ -8,13 +8,13 @@
     >
       <div
           v-for="(filterName, i) in filtersData"
-          :key="i"
+          :key="i*Math.random()"
           style="padding: 0 20px"
       >
         {{ filterName.label }}
         <v-checkbox
             v-for="(filterItem, i) in filtersData[i].list"
-            :key="i"
+            :key="i*Math.random()"
             :label="filterItem"
             color="orange"
             hide-details
